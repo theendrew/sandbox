@@ -19,7 +19,7 @@ public class Main {
 //        task4(1);
 //        task4(4546);
 //        task4(1065);
-        OUT.println(pascal(4,5));
+        OUT.println(pascal(4, 5));
     }
 
     /** Дано равенство, в котором цифры заменены на буквы:
@@ -70,5 +70,13 @@ public class Main {
         sum += 1;
         System.out.println("Сумма на диагоналях = " + sum);
     }
+
+
+    static boolean isBalancedString(String toTest) {
+
+        return true;
+    }
+
+
 
 }
