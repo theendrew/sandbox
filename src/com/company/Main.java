@@ -2,24 +2,24 @@ package com.company;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.lang.Math.*;
 
 public class Main {
 
-
+    static final PrintStream OUT = System.out;
 
 
     public static void main(String[] args) throws IOException{
 
-        long[] arr = new long[(Math.pow(107, 141))];
-        System.out.println(Math.pow(2, 32) -1);
         //task2();
 //        task4(5);
 //        task4(1);
 //        task4(4546);
 //        task4(1065);
+        OUT.println(pascal(4,5));
     }
 
     /** Дано равенство, в котором цифры заменены на буквы:
@@ -54,6 +54,11 @@ public class Main {
         System.out.println("counter = " + counter);
     }
 
+
+    static int pascal(int column, int row) {
+        if (column == 0 || column == row) return 1;
+        return pascal(column - 1, row - 1) + pascal(column, row - 1);
+    }
     static void task4(int length) {
         if (length % 2 == 0) {
             System.out.println("Сторона спирали должна быть нечетной");

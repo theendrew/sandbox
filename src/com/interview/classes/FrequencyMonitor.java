@@ -8,7 +8,7 @@ import java.util.stream.Stream;
  * Created by coon on 11.05.2016.
  */
 public class FrequencyMonitor<K> implements CacheMonitor<K> {
-    Map<K, Integer> freqMap = new HashMap<>();
+    Map<K, Integer> freqMap = new HashMap();
 
 
     @Override
