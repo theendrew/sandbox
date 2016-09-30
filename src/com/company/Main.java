@@ -6,6 +6,7 @@ import java.io.PrintStream;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.lang.Math.*;
+import java.util.Stack;
 
 public class Main {
 
@@ -19,7 +20,12 @@ public class Main {
 //        task4(1);
 //        task4(4546);
 //        task4(1065);
-        OUT.println(pascal(4, 5));
+        String srt ="".substring(1);
+        OUT.println(srt);
+        OUT.println("(1) " + isBalancedString("(1) "));
+        OUT.println("(1)( " + isBalancedString("(1)( "));
+        OUT.println(")1) " + isBalancedString(")1) "));
+        OUT.println("sadffdsfdsf)1) gffdhg((" + isBalancedString("sadffdsfdsf)1) gffdhg(("));
     }
 
     /** Дано равенство, в котором цифры заменены на буквы:
@@ -71,11 +77,44 @@ public class Main {
         System.out.println("Сумма на диагоналях = " + sum);
     }
 
+    static char popChar(String str) {
+        char c = str.charAt(0);
 
-    static boolean isBalancedString(String toTest) {
-
-        return true;
+        popChar(str.substring(1));return c;
     }
+
+    static boolean isBalanced(String str) {
+        if (str.length() == 1) return true;
+        char c = str.charAt(0);
+        if (c == '(') isBalanced(str.substring(1));
+        return true;
+
+    }
+    static boolean isBalancedString(String toTest) {
+        Stack<Character> chars = new Stack<Character>();
+        for (int i =0; i < toTest.length() - 1; i++){
+            char c= c=toTest.charAt(i);
+            if (c == '(') {
+                chars.push(c);
+            }
+            if (c==')') {
+                if (chars.empty()) return false;
+                chars.pop();
+            }
+        }
+
+        return chars.empty();
+    }
+
+    static int[] int2PrimaryInts(int number) {
+
+        if (number ==1) return new int[] {1};
+        for (int i = 2;number ==0;) {
+                if (number % i == 0) {
+                    number /= i;
+                }
+    }
+
 
 
 
